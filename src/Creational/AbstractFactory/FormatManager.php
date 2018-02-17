@@ -35,7 +35,6 @@ class FormatManager
 	 */
 	public function convert( $format = 'json' )
 	{
-
 		switch ( strtolower($format) ) {
 			case 'json':
 				if(is_null($this->json_format)) {

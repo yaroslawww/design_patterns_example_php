@@ -37,5 +37,4 @@ class XmlFormatFactory extends AbstractFormatFactory
 		}
 	}
 
-
 }
