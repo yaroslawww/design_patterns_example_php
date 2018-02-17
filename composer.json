@@ -1,0 +1,40 @@
+{
+  "name": "yaroslawww/design_patterns_example_php",
+  "description": "Design patterns example on PHP",
+  "keywords": [
+    "design patterns",
+    "patterns",
+    "programming",
+    "php",
+    "examples",
+    "learning",
+    "angecode"
+  ],
+  "homepage": "https://webcap.com",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Yaroslav Georgitsa",
+      "email": "yaroslav.georgitsa@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~6.0"
+  },
+  "autoload": {
+    "classmap": [
+    ],
+    "psr-4": {
+      "DesignPatterns\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "dev"
+}
