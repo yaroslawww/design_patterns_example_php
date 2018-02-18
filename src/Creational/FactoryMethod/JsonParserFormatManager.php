@@ -4,7 +4,6 @@ namespace DesignPatterns\Creational\FactoryMethod;
 
 
 use DesignPatterns\Creational\AbstractFactory\Formats\JsonFormatFactory;
-use DesignPatterns\Creational\AbstractFactory\Formats\XmlFormatFactory;
 
 class JsonParserFormatManager implements FormatFactoryMethodInterface
 {
@@ -14,8 +13,6 @@ class JsonParserFormatManager implements FormatFactoryMethodInterface
 	/** Singletons formats variables */
 	/** @var JsonFormatFactory $json_format */
 	private $json_format;
-	/** @var XmlFormatFactory $xml_format */
-	private $xml_format;
 
 	/**
 	 * FileManager constructor.
