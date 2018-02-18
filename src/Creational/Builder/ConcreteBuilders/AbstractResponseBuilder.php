@@ -149,5 +149,4 @@ abstract class AbstractResponseBuilder implements BuilderInterface
 		return $body;
 	}
 
-
 }

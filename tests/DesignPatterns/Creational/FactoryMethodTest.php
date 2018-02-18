@@ -3,11 +3,10 @@
 namespace Tests\DesignPatterns\Creational;
 
 
-use DesignPatterns\Creational\AbstractFactory\Formats\JsonFormatFactory;
-use DesignPatterns\Creational\AbstractFactory\Formats\XmlFormatFactory;
+use DesignPatterns\Creational\FactoryMethod\FormatManager;
 use PHPUnit\Framework\TestCase;
 
-class AbstractFactoryTest extends TestCase
+class FactoryMethodTest extends TestCase
 {
 
 	protected $data = [
@@ -16,8 +15,9 @@ class AbstractFactoryTest extends TestCase
 
 	public function testXmlFormat()
 	{
+		$format = new FormatManager($this->data);
 
-		$formatted_data = (new XmlFormatFactory())->generateContent($this->data);
+		$formatted_data = $format->convert('xml');
 		$xml            = simplexml_load_string($formatted_data, \SimpleXMLElement::class);
 
 		if($xml != false && isset($xml->foo)) {
@@ -30,11 +30,22 @@ class AbstractFactoryTest extends TestCase
 
 	public function testJsonFormat()
 	{
-		$formatted_data = (new JsonFormatFactory())->generateContent($this->data);
+		$format = new FormatManager($this->data);
+
+		$formatted_data = $format->convert('json');
 
 		$this->assertJson($formatted_data);
 		$this->assertEquals(json_encode($this->data), $formatted_data);
 
+	}
+
+	public function testExceptionWhileFormatting()
+	{
+		$format = new FormatManager($this->data);
+
+		$this->expectException(\Exception::class);
+
+		$format->convert('undefined');
 	}
 
 }

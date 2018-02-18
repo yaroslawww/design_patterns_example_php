@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPatterns\Creational\AbstractFactory;
+namespace DesignPatterns\Creational\FactoryMethod;
 
 
 use DesignPatterns\Creational\AbstractFactory\Formats\JsonFormatFactory;
@@ -28,6 +28,8 @@ class FormatManager
 	}
 
 	/**
+	 * This Is Factory Method for Formats Factory
+	 *
 	 * @param string $format
 	 *
 	 * @return string

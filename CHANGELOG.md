@@ -2,3 +2,4 @@
     - Initial release.
     - Added AbstractFactory
     - Added Builder
+    - Added FactoryMethod
