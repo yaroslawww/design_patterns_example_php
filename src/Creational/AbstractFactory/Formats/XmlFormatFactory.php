@@ -9,6 +9,11 @@ use SimpleXMLElement;
 class XmlFormatFactory extends AbstractFormatFactory
 {
 
+	/**
+	 * @param array $data
+	 *
+	 * @return string
+	 */
 	public function generateContent( array $data ): string
 	{
 		//creating object of SimpleXMLElement

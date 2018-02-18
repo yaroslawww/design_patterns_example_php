@@ -6,7 +6,7 @@ namespace DesignPatterns\Creational\FactoryMethod;
 use DesignPatterns\Creational\AbstractFactory\Formats\JsonFormatFactory;
 use DesignPatterns\Creational\AbstractFactory\Formats\XmlFormatFactory;
 
-class FormatManager
+class GeneralFormatManager implements FormatFactoryMethodInterface
 {
 	/** @var array $data */
 	protected $data;
@@ -35,7 +35,7 @@ class FormatManager
 	 * @return string
 	 * @throws \Exception
 	 */
-	public function convert( $format = 'json' )
+	public function convert( $format = 'json' ): string
 	{
 		switch ( strtolower($format) ) {
 			case 'json':

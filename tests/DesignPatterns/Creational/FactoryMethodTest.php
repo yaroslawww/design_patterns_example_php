@@ -3,7 +3,8 @@
 namespace Tests\DesignPatterns\Creational;
 
 
-use DesignPatterns\Creational\FactoryMethod\FormatManager;
+use DesignPatterns\Creational\FactoryMethod\GeneralFormatManager;
+use DesignPatterns\Creational\FactoryMethod\JsonParserFormatManager;
 use PHPUnit\Framework\TestCase;
 
 class FactoryMethodTest extends TestCase
@@ -13,9 +14,9 @@ class FactoryMethodTest extends TestCase
 		'foo' => 'bar'
 	];
 
-	public function testXmlFormat()
+	public function testXmlFormatInGeneral()
 	{
-		$format = new FormatManager($this->data);
+		$format = new GeneralFormatManager($this->data);
 
 		$formatted_data = $format->convert('xml');
 		$xml            = simplexml_load_string($formatted_data, \SimpleXMLElement::class);
@@ -28,9 +29,9 @@ class FactoryMethodTest extends TestCase
 		}
 	}
 
-	public function testJsonFormat()
+	public function testJsonFormatInGeneral()
 	{
-		$format = new FormatManager($this->data);
+		$format = new GeneralFormatManager($this->data);
 
 		$formatted_data = $format->convert('json');
 
@@ -39,13 +40,33 @@ class FactoryMethodTest extends TestCase
 
 	}
 
-	public function testExceptionWhileFormatting()
+	public function testExceptionWhileFormattingInGeneral()
 	{
-		$format = new FormatManager($this->data);
+		$format = new GeneralFormatManager($this->data);
 
 		$this->expectException(\Exception::class);
 
 		$format->convert('undefined');
+	}
+
+	public function testJsonFormatInJsonParser()
+	{
+		$format = new JsonParserFormatManager($this->data);
+
+		$formatted_data = $format->convert('json');
+
+		$this->assertJson($formatted_data);
+		$this->assertEquals(json_encode($this->data), $formatted_data);
+
+	}
+
+	public function testExceptionWhileFormattingInJsonParser()
+	{
+		$format = new JsonParserFormatManager($this->data);
+
+		$this->expectException(\Exception::class);
+
+		$format->convert('xml');
 	}
 
 }
