@@ -36,5 +36,9 @@
       "Tests\\": "tests/"
     }
   },
+  "scripts": {
+    "post-update-cmd": [],
+    "post-install-cmd": []
+  },
   "minimum-stability": "dev"
 }
