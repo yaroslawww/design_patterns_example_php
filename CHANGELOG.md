@@ -3,3 +3,4 @@
     - Added AbstractFactory
     - Added Builder
     - Added FactoryMethod
+    - Added Prototype

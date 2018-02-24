@@ -1,0 +1,14 @@
+{
+  "amount": {
+    "min": 23,
+    "max": 350
+  },
+  "size": {
+    "height": 100,
+    "width": 30
+  },
+  "colors": {
+    "main": "#DC3023",
+    "second": "#CF3A24"
+  }
+}
