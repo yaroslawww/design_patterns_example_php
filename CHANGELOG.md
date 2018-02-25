@@ -4,3 +4,4 @@
     - Added Builder
     - Added FactoryMethod
     - Added Prototype
+    - Added Singleton
