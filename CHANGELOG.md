@@ -8,3 +8,4 @@
     -- Singleton
     - Structural
     -- Adapter
+    -- Bridge
