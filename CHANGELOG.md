@@ -9,3 +9,4 @@
     - Structural
     -- Adapter
     -- Bridge
+    -- Composite
