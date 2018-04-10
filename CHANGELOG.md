@@ -11,3 +11,4 @@
       -- Bridge
       -- Composite
       -- Decorator
+      -- Facade

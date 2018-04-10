@@ -4,7 +4,6 @@ namespace Tests\DesignPatterns\Structural;
 
 
 use DesignPatterns\Structural\Decorator\Backup;
-use DesignPatterns\Structural\Decorator\Transfers\BackupByFtp;
 use DesignPatterns\Structural\Decorator\Transfers\BackupToFolder;
 use PHPUnit\Framework\TestCase;
 
